@@ -1,5 +1,10 @@
 ﻿/* Layout adjusted so slideshow sits in document flow (below the company description) */
 
+/* Adjustable image width stuck to the left of the card */
+:root {
+    --slide-image-width: 320px; /* change this to make the image wider/narrower */
+}
+
 /* Put slideshow in the normal flow instead of covering the viewport */
 .slideshow-root {
     position: relative; /* remains in-flow */
@@ -27,7 +32,8 @@
     box-sizing: border-box;
 }
 
-/* Card visuals */
+/* Card visuals
+   Add extra left padding so the card content does not sit under the absolute-positioned image */
 .slideshow-card {
     box-sizing: border-box;
     width: 100vw;
@@ -36,11 +42,14 @@
     background: var(--slideshow-bg);
     border-radius: 8px;
     box-shadow: var(--slideshow-shadow);
-    padding: 24px 28px; /* match company card padding for visual balance */
+    /* keep top/right/bottom padding, push content to the right by image width + gap */
+    padding: 24px 28px 24px calc(var(--slide-image-width) + 28px);
     text-align: center;
     font-size: 1.15rem;
     color: var(--slide-text-color);
     user-select: none;
+    position: relative; /* establishes containing block for absolute .slide-left */
+    overflow: hidden; /* keep image clipped to the card's rounded corners */
 }
 
 /* Indicators now flow directly under the card */
@@ -97,7 +106,8 @@
 @media (max-width: 420px) {
     .slideshow-card {
         margin: 0 16px;
-        padding: 20px;
+        /* reduce left push on tiny screens */
+        padding: 20px 20px 20px calc(var(--slide-image-width) + 28px);
         font-size: 1rem;
     }
 
@@ -123,11 +133,41 @@
     border-radius: 4px;
 }
 
+/* When image is placed inside the card we still keep the right column for card content. */
 .slide-left,
 .slide-right {
     flex: 1 1 50%;
 }
 
+/* Make the left column clip its contents so image rounding is visible
+   Position the image ABSOLUTE inside the card so it's physically inside the card
+   and flush to the card's left edge (not fixed to the viewport). */
+.slide-left {
+    position: absolute;
+    left: 0;
+    top: 24px;                /* align inside card padding */
+    bottom: 24px;             /* align inside card padding */
+    width: var(--slide-image-width);
+    overflow: hidden;         /* ensure image corners are clipped */
+    z-index: 6;               /* sits above card background but below interactive overlays */
+    pointer-events: none;     /* image should not intercept clicks */
+    display: block;
+}
+
+/* Apply heavy rounding only to the RIGHT side of the left image (left remains rectangular)
+   Using very large radius (9999px) makes the right side appear as a semicircle/pill */
+.slide-left img,
+.slide-left .slide-image-bg,
+.slide-left .slide-figure {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 9999px 9999px 0; /* right side very rounded (circular), left side rectangular */
+    pointer-events: none;
+}
+
+/* For the content on the right column */
 .slide-right {
     padding: 8px 12px;
     text-align: left;
@@ -187,6 +227,8 @@
     border-radius: 18px;
 }
 
+/* Responsive: stacked layout on narrow screens — restore normal flow so image sits above content
+   and remove absolute positioning so it doesn't block the UI on small viewports. */
 @media (max-width: 900px) {
     .slide-grid {
         flex-direction: column;
@@ -198,5 +240,31 @@
 
     .slide-title {
         font-size: 1.25rem;
+    }
+
+    /* stacked layout: undo absolute positioning and use normal corner rounding */
+    .slide-left {
+        position: static;
+        left: auto;
+        top: auto;
+        bottom: auto;
+        transform: none;
+        width: 100%;
+        max-height: none;
+        pointer-events: auto;
+    }
+
+    .slide-left,
+    .slide-left img,
+    .slide-left .slide-image-bg,
+    .slide-left .slide-figure {
+        border-radius: 8px 8px 0 0;
+        overflow: visible;
+    }
+
+    /* restore original card padding on narrow screens */
+    .slideshow-card {
+        padding: 24px 28px;
+        overflow: visible;
     }
 }
