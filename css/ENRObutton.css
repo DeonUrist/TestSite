@@ -56,14 +56,14 @@
 /* RO target (aria-pressed="false") — SVG vertical stripes (explicit SVG to match EN sizing) */
 .page-header .lang-btn[aria-pressed="false"] {
     background-color: var(--lang-btn-fallback-ro);
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20' preserveAspectRatio='none'><rect x='0' y='0' width='10' height='20' fill='%23002B7F'/><rect x='10' y='0' width='10' height='20' fill='%23FCD116'/><rect x='20' y='0' width='10' height='20' fill='%23CE1126'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 30 20' preserveAspectRatio='none'><rect x='0' y='0' width='10' height='20' fill='%23002B7F'/><rect x='10' y='0' width='10' height='20' fill='%23FCD116'/><rect x='20' y='0' width='10' height='20' fill='%23CE1126'/></svg>");
     border-color: rgba(0,0,0,0.06);
 }
 
 /* EN target (aria-pressed="true") — Union Jack: draw white elements first, then red overlays for correct layering */
 .page-header .lang-btn[aria-pressed="true"] {
     background-color: var(--lang-btn-fallback-en);
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60' preserveAspectRatio='none'>\
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 120 60' preserveAspectRatio='none'>\
 <rect width='120' height='60' fill='%23012169'/>\
 <!-- White base crosses: vertical + horizontal + broad diagonals -->\
 <rect x='50' width='20' height='60' fill='%23ffffff'/>\
@@ -81,7 +81,7 @@
 
 /* When JS hasn't run and attribute missing, show Romanian (assume EN default) */
 .page-header .lang-btn:not([aria-pressed]) {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20' preserveAspectRatio='none'><rect x='0' y='0' width='10' height='20' fill='%23002B7F'/><rect x='10' y='0' width='10' height='20' fill='%23FCD116'/><rect x='20' y='0' width='10' height='20' fill='%23CE1126'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 30 20' preserveAspectRatio='none'><rect x='0' y='0' width='10' height='20' fill='%23002B7F'/><rect x='10' y='0' width='10' height='20' fill='%23FCD116'/><rect x='20' y='0' width='10' height='20' fill='%23CE1126'/></svg>");
     background-size: 100% 100%;
 }
 
