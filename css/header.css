@@ -1,0 +1,27 @@
+.site-header {
+  background: #0b5cff;
+  color: #fff;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,.08);
+}
+.site-header .container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.brand {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.main-nav a {
+  color: rgba(255,255,255,.95);
+  text-decoration: none;
+  margin-left: 1rem;
+}
+.main-nav a:hover {
+  text-decoration: underline;
+}
