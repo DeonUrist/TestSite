@@ -1,21 +1,119 @@
-<!doctype html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hello World</title>
+    <title>EVDANCO GROUP</title>
+    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="/css/slideshow.css" />
 
-    <link rel="stylesheet" href="css/site.css" />
-    <link rel="stylesheet" href="css/header.css" />
+    <style>
+        /* Local styles for the company description (keeps changes scoped to this page) */
+        .company-description {
+            max-width: 80%;
+            margin: 5rem auto; /* reduced top/bottom space */
+            padding: 24px 28px; /* slightly tighter padding */
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0);
+            box-shadow: 0 8px 24px rgba(20,20,20,0.06);
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+            color: #ffffff;
+            line-height: 1.65;
+            font-size: 1.03rem;
+            position: static; /* no longer forcing stacking with z-index */
+        }
+
+            .company-description h2 {
+                margin: 0 0 0.5rem 0;
+                font-size: 1.125rem;
+                font-weight: 700;
+                color: #ffbb00;
+                text-align: center;
+                letter-spacing: 0.2px;
+            }
+
+            .company-description p {
+                margin: 0.6rem 0; /* slightly reduced paragraph gap */
+                text-align: justify; /* try to justify the last line too */
+                -moz-text-align-last: justify;
+                -ms-text-align-last: justify;
+            }
+
+        @media (max-width: 640px) {
+            .company-description {
+                margin: 1rem 1rem;
+                padding: 18px;
+                font-size: 0.98rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div id="site-header" data-include="includes/header.html"></div>
+    <div id="site-header"></div>
 
-    <main class="center">
-        <h1 class="hero" data-i18n="site.title">Hello World</h1>
-    </main>
+    <!-- Company description (centered, professional formatting) -->
+    <section class="company-description" aria-label="Company description">
+        <h2 data-i18n="page.companyname">EVDANCO GROUP ROMANIA</h2>
 
-    <script src="js/include-header.js" defer></script>
-    <script src="js/i18n.js" defer></script>
+        <p data-i18n="page.companydescriptionp1">
+            EVDANCO GROUP ROMANIA is group of companies, registered in Targoviste,Romania that provides complex service for Romanian drilling and workover rigs.
+            Our company has a professional technical team with more than 30 years of experience in designing, manufacturing and repairing drilling rigs and other incorporated equipment.
+            Up to now EVDANCO has supplied drilling equipment, spare parts and provides maintenance services in more than 15 countries all over the world, as Romania, Germany, Oman, Iraq, Libya, Brazil, Ecuador and other countries.
+        </p>
+        <br />
+        <p data-i18n="page.companydescriptionp2">
+            Evdanco offers marketing services of oil and gas equipment, design, service and maintenance of oil and gas equipment, consulting in Romania but also abroad.
+            Our company is growing with a dynamic management, able to become a serious business partner on domestic and international markets.
+        </p>
+        <br />
+        <p data-i18n="page.companydescriptionp3">
+            EVDANCO is always dedicated to ensuring customers receive the highest best-in-class equipment and services and products for industry where conditions and requirements change daily.
+            EVDANCO’s goal is to deliver the products and services you need in a reliable, responsive, and professional manner that sets a new standard for the industry.
+        </p>
+        <br />
+        <p data-i18n="page.companydescriptionp4">
+            You can count on EVDANCO to provide a wide range of products and services with one distinct difference - an authentic commitment to supporting you every step of the way.
+            EVDANCO provides the expertise and responsive delivery demanded in this industry.
+        </p>
+    </section>
+
+    <div class="slideshow-root" aria-hidden="false">
+        <div class="slideshow-viewport">
+            <div class="slideshow-card" id="slideshowCard" role="status" aria-live="polite">Achievements</div>
+
+            <!-- moved inside the viewport so it will sit directly under the card -->
+            <div class="slideshow-indicators" id="slideshowIndicators" aria-hidden="false">
+                <button class="indicator" data-index="0" aria-label="Show slide 1">
+                    <span class="dot active"></span>
+                </button>
+                <div class="line" aria-hidden="true"></div>
+                <button class="indicator" data-index="1" aria-label="Show slide 2">
+                    <span class="dot"></span>
+                </button>
+                <div class="line" aria-hidden="true"></div>
+                <button class="indicator" data-index="2" aria-label="Show slide 3">
+                    <span class="dot"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Quality management systems -->
+    <section class="company-description" aria-label="Quality management">
+        <h2>Quality Management Systems</h2>
+
+        <h3>ISO 9001-2008 Certification</h3>
+        <p>
+            The QA management system is certified in accordance with ISO 9001:2008 standard, resulting in a quality assurance management system that has been certified against a best practice standard and found compliant by a third-party certification.
+        </p>
+        <br />
+        <h3>Quality Management Principles</h3>
+        <p>
+        Principles include a strong customer focus, the motivation and implication of top management, the process approach and continual improvement. We ensure that our customers get consistent, good quality products and services, which in turn brings many business benefits.
+        </p>
+    </section>
+
+    <script src="/js/include-header.js" defer></script>
+    <script src="/js/slideshow.js" defer></script>
 </body>
 </html>
