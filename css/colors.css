@@ -1,0 +1,32 @@
+﻿:root {
+    /* Color System
+———
+- 🌈 **Primary**: ![#007bff](https://via.placeholder.com/15/007bff/000000?text=+) `#007bff` (blue)
+- 🌊 **Info**: ![#17a2b8](https://via.placeholder.com/15/17a2b8/000000?text=+) `#17a2b8` (cyan)
+- ✔️ **Success**: ![#28a745](https://via.placeholder.com/15/28a745/000000?text=+) `#28a745` (green)
+- ⚠️ **Warning**: ![#ffc107](https://via.placeholder.com/15/ffc107/000000?text=+) `#ffc107` (amber)
+- ❌ **Danger**: ![#dc3545](https://via.placeholder.com/15/dc3545/000000?text=+) `#dc3545` (red)
+- 🔲 **Dark**: ![#343a40](https://via.placeholder.com/15/343a40/ffffff?text=+) `#343a40` (dark gray)
+- ⚪ **Light**: ![#f8f9fa](https://via.placeholder.com/15/f8f9fa/000000?text=+) `#f8f9fa` (light gray)
+*/
+    /* Main */
+    --page-background-color: #000035;
+    --page-text-color: #aaaaaa;
+    --header-background-color: #000035;
+    --header-border-color: #aaaaaa;
+    --header-text-color: #aaaaaa;
+    /* Index page slides*/
+
+    --slideshow-bg: #101045;
+    --slideshow-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    --dot-size: 14px;
+    --dot-color: #ffbb00;
+    --dot-empty-border: #cfcfcf;
+    --line-color: #aaaaaa;
+    --slide-title-color: #ffbb00; /* color for slide titles in JS-generated slide contents */
+    --slide-text-color: #eeeeee; /* color for slide body text (paragraphs, lists) in JS-generated slide contents */
+    --focus-outline-color: rgba(255, 255, 255, 0.12); /* focus ring color for indicator dot when focused */
+    --hero-text-color: #eeeeee; /* text color for hero slide overlay (foreground on image) */
+    --cta-bg: #ffbb00; /* CTA button background color */
+    --cta-text-color: #222222; /* CTA button text color */
+}
