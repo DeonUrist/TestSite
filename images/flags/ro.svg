@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="48" height="32" role="img" aria-labelledby="title-ro desc-ro">
-  <title id="title-ro">Romanian flag</title>
-  <desc id="desc-ro">Vertical tricolor of blue, yellow and red</desc>
-  <!-- Three vertical bands: blue, yellow, red -->
-  <rect x="0"   y="0" width="1" height="2" fill="#002B7F"/>
-  <rect x="1"   y="0" width="1" height="2" fill="#FCD116"/>
-  <rect x="2"   y="0" width="1" height="2" fill="#CE1126"/>
-</svg>
