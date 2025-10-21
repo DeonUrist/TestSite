@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "about": "Despre",
+    "contact": "Contact"
+  },
+  "site": {
+    "title": "Salut Lume",
+    "about": "Despre",
+    "contact": "Contact"
+  },
+  "contact.hero": "Contact"
+}

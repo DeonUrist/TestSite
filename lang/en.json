@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "site": {
+    "title": "Hello World",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "contact.hero": "Contact"
+}

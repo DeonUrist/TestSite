@@ -1,9 +1,10 @@
 /* Site-wide styles (place at project root: css\site.css) */
-:root{
-  --bg-1: #0f1724;
-  --bg-2: #1f3a57;
-  --text: #ffffff;
-  --accent: #7bd389;
+:root {
+    /*--bg-1: #0f1724;*/
+    --bg-2: #333333;
+    --bg-1: #6080ab;
+    --text: #ffffff;
+    --accent: #7bd389;
 }
 
 *{box-sizing:border-box}
@@ -12,8 +13,11 @@ body{
   margin:0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color:var(--text);
-  /* subtle diagonal gradient background */
+  /* vertical smooth gradient pinned to the viewport */
   background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
@@ -50,4 +54,61 @@ body{
   margin:12px auto 0;
   border-radius:2px;
   box-shadow: 0 6px 18px rgba(123,211,137,0.18);
+}
+
+/* Header Styles */
+.site-header {
+  background-color: var(--bg-1);
+  padding: 1rem 0;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo-link {
+  display: inline-block;
+}
+
+.logo {
+  max-height: 50px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+}
+
+.lang-switch {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-switch button {
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.lang-switch button:hover {
+  color: var(--accent);
 }

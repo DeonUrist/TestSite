@@ -1,27 +1,16 @@
-.site-header {
-  background: #0b5cff;
-  color: #fff;
-  padding: 0.5rem 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,.08);
+/* Make logo smaller and keep aspect ratio */
+.logo {
+  height: 48px;    /* desired visible height */
+  width: auto;     /* preserve aspect ratio */
+  display: block;
+  max-height: 64px; /* safety cap on very tall viewports */
 }
-.site-header .container {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
-}
-.brand {
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-}
-.main-nav a {
-  color: rgba(255,255,255,.95);
-  text-decoration: none;
-  margin-left: 1rem;
-}
-.main-nav a:hover {
-  text-decoration: underline;
+
+/* Optional: vertically center the logo inside its container */
+.header-top .container,
+.logo-link {
+    display: flex;
+    align-items: center;
+    padding-left: 120px;
+    padding-top: 40px;
 }
