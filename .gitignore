@@ -1,0 +1,8 @@
+# VS workspace & caches
+.vs/
+# Build outputs
+bin/
+obj/
+# User-specific files
+*.user
+*.suo

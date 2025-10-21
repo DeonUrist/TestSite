@@ -1,0 +1,53 @@
+/* Site-wide styles (place at project root: css\site.css) */
+:root{
+  --bg-1: #0f1724;
+  --bg-2: #1f3a57;
+  --text: #ffffff;
+  --accent: #7bd389;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  /* subtle diagonal gradient background */
+  background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* center the content both vertically and horizontally */
+.center{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+  text-align:center;
+}
+
+/* hero text */
+.hero{
+  margin:0;
+  line-height:1;
+  font-weight:700;
+  /* responsive scaling */
+  font-size: clamp(1.75rem, 6vw, 3.5rem);
+  letter-spacing: -0.02em;
+  color:var(--text);
+  text-shadow: 0 4px 18px rgba(0,0,0,0.45);
+}
+
+/* small accent underline if desired */
+.hero::after{
+  content:"";
+  display:block;
+  width:48px;
+  height:4px;
+  background:var(--accent);
+  margin:12px auto 0;
+  border-radius:2px;
+  box-shadow: 0 6px 18px rgba(123,211,137,0.18);
+}
